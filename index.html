@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Анкета участника — личная подпись</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600&family=Spectral:ital,wght@0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<section class="blank-box" id="blank-box">
+
+  <h1>Анкета участника</h1>
+  <p class="doc-sub">Заполните поля бланка и поставьте личную подпись в отведённом поле. Подпись сохраняется отдельным файлом.</p>
+  <hr class="hr">
+
+  <form id="form" novalidate>
+
+    <div class="field" id="fldFio">
+      <label for="fio"><span class="idx">01</span>ФИО</label>
+      <input id="fio" name="fio" type="text" autocomplete="name" placeholder="Иванов Иван Иванович">
+      <p class="error" id="fioErr"></p>
+    </div>
+
+    <div class="field" id="fldPhone">
+      <label for="phone"><span class="idx">02</span>Телефон</label>
+      <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7 (900) 123-45-67">
+      <p class="error" id="phoneErr"></p>
+    </div>
+
+    <div class="field" id="fldEmail">
+      <label for="email"><span class="idx">03</span>Электронная почта</label>
+      <input id="email" name="email" type="email" autocomplete="email" placeholder="user@example.ru">
+      <p class="error" id="emailErr"></p>
+    </div>
+
+    <div class="field" id="fldSig">
+      <label for="signature"><span class="idx">04</span>Личная подпись</label>
+
+      <div class="signature-wrap" id="sigWrap">
+        <canvas id="signature" aria-label="Поле подписи"></canvas>
+      </div>
+
+      <div class="sig-toolbar">
+        <p class="sig-status" id="sigStatus">
+          <svg class="st-empty" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+          <svg class="st-ok" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8.4 12.4l2.4 2.4 4.6-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span id="sigStatusText">Подпись не поставлена</span>
+        </p>
+        <div class="sig-panel-bottom">
+          <button type="button" class="btn-res" id="clearBtn">Очистить</button>
+        </div>
+      </div>
+      <p class="error" id="sigErr"></p>
+    </div>
+
+    <p class="form-error" id="formStatus" role="alert"></p>
+
+    <button type="submit" class="btn-submit" id="submitBtn">
+      <span class="btn-label">Отправить</span>
+      <span class="btn-loading">
+        <svg class="spin" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2.5" stroke-dasharray="42" stroke-dashoffset="14" stroke-linecap="round"/></svg>
+        Отправка…
+      </span>
+    </button>
+  </form>
+
+</section>
+<script src="js/main.js"></script>
+</body>
+</html>
